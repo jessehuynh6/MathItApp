@@ -4,29 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".GameActivity">
 
     <TextView
-        android:id="@+id/questionText"
+        android:id="@+id/tvQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:text="Maths Question Here"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/numpad"
-        android:layout_width="355dp"
-        android:layout_height="341dp"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="355dp">
+        android:id="@+id/glNumpad"
+        android:layout_width="269dp"
+        android:layout_height="189dp"
+        app:columnCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInput">
 
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="wrap_content"
+            android:tag="2"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/b3"
+            android:layout_width="wrap_content"
+            android:tag="3"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/b4"
+            android:tag="4"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/b5"
+            android:tag="5"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/b6"
+            android:tag="6"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/b7"
+            android:tag="7"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/b8"
+            android:tag="8"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/b9"
+            android:tag="9"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/bClear"
+            android:text="Clear" />
+
+        <Button
+            android:id="@+id/b0"
+            android:tag="0"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/bEnter"
+            android:text="Enter" />
 
     </androidx.gridlayout.widget.GridLayout>
 
+    <TextView
+        android:id="@+id/tvInput"
+        android:layout_width="137dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="47dp"
+        android:enabled="false"
+        android:text="User input"
+        android:textColor="#F44336"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="191dp"
+        android:layout_height="67dp"
+        app:layout_constraintBottom_toTopOf="@+id/glNumpad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInput">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hint" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
